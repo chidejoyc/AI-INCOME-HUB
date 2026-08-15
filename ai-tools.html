@@ -1,110 +1,83 @@
-AI Tools Directory
-Discover the best AI tools for work, study and business.
-
-Search AI tools...
-All
-Writing
-Image
-Coding
-Video
-Research
-Writing
-ChatGPT
-Free & Paid plans available.
-
-Visit Website
-Writing
-Claude
-Free & Paid plans available.
-
-Visit Website
-Writing
-Gemini
-Free & Paid plans available.
-
-Visit Website
-Research
-Perplexity
-Free & Paid plans available.
-
-Visit Website
-Research
-Grok
-Free & Paid plans available.
-
-Visit Website
-Image
-Leonardo AI
-Free & Paid plans available.
-
-Visit Website
-Image
-Canva AI
-Free & Paid plans available.
-
-Visit Website
-Image
-Adobe Firefly
-Free & Paid plans available.
-
-Visit Website
-Image
-Midjourney
-Free & Paid plans available.
-
-Visit Website
-Video
-Runway
-Free & Paid plans available.
-
-Visit Website
-Video
-Pika
-Free & Paid plans available.
-
-Visit Website
-Video
-CapCut AI
-Free & Paid plans available.
-
-Visit Website
-Coding
-Cursor
-Free & Paid plans available.
-
-Visit Website
-Coding
-GitHub Copilot
-Free & Paid plans available.
-
-Visit Website
-Coding
-Bolt.new
-Free & Paid plans available.
-
-Visit Website
-Coding
-Lovable
-Free & Paid plans available.
-
-Visit Website
-Writing
-Notion AI
-Free & Paid plans available.
-
-Visit Website
-Writing
-Gamma
-Free & Paid plans available.
-
-Visit Website
-Writing
-ElevenLabs
-Free & Paid plans available.
-
-Visit Website
-Image
-Ideogram
-Free & Paid plans available.
-
-Visit Website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tools - AI Income Hub</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#0b1220;color:#fff}
+header{background:linear-gradient(135deg,#2563eb,#06b6d4);padding:40px 20px;text-align:center}
+.container{max-width:1200px;margin:auto;padding:20px}
+#search{width:100%;padding:14px;border-radius:10px;border:none;margin:20px 0;font-size:16px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.filters button{padding:10px 16px;border:none;border-radius:20px;background:#1e293b;color:#fff;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:#162033;padding:18px;border-radius:14px}
+.badge{display:inline-block;background:#06b6d4;color:#001;padding:4px 10px;border-radius:20px;font-size:12px}
+a{display:inline-block;margin-top:12px;background:#2563eb;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+<h1>AI Tools Directory</h1>
+<p>Discover the best AI tools for work, study and business.</p>
+</header>
+<div class="container">
+<input id="search" placeholder="Search AI tools...">
+<div class="filters">
+<button onclick="filterCat('All')">All</button>
+<button onclick="filterCat('Writing')">Writing</button>
+<button onclick="filterCat('Image')">Image</button>
+<button onclick="filterCat('Coding')">Coding</button>
+<button onclick="filterCat('Video')">Video</button>
+<button onclick="filterCat('Research')">Research</button>
+</div>
+<div class="grid" id="grid"></div>
+</div>
+<script>
+const tools=[
+["ChatGPT","Writing","https://chatgpt.com"],
+["Claude","Writing","https://claude.ai"],
+["Gemini","Writing","https://gemini.google.com"],
+["Perplexity","Research","https://perplexity.ai"],
+["Grok","Research","https://grok.com"],
+["Leonardo AI","Image","https://leonardo.ai"],
+["Canva AI","Image","https://canva.com"],
+["Adobe Firefly","Image","https://firefly.adobe.com"],
+["Midjourney","Image","https://midjourney.com"],
+["Runway","Video","https://runwayml.com"],
+["Pika","Video","https://pika.art"],
+["CapCut AI","Video","https://capcut.com"],
+["Cursor","Coding","https://cursor.com"],
+["GitHub Copilot","Coding","https://github.com/features/copilot"],
+["Bolt.new","Coding","https://bolt.new"],
+["Lovable","Coding","https://lovable.dev"],
+["Notion AI","Writing","https://notion.so"],
+["Gamma","Writing","https://gamma.app"],
+["ElevenLabs","Writing","https://elevenlabs.io"],
+["Ideogram","Image","https://ideogram.ai"]
+];
+const grid=document.getElementById('grid');
+function render(list){
+ grid.innerHTML='';
+ list.forEach(t=>{
+  grid.innerHTML+=`<div class="card" data-cat="${t[1]}">
+  <span class="badge">${t[1]}</span>
+  <h2>${t[0]}</h2>
+  <p>Free & Paid plans available.</p>
+  <a href="${t[2]}" target="_blank">Visit Website</a>
+  </div>`;
+ });
+}
+render(tools);
+document.getElementById('search').addEventListener('input',e=>{
+ const q=e.target.value.toLowerCase();
+ render(tools.filter(t=>t[0].toLowerCase().includes(q)||t[1].toLowerCase().includes(q)));
+});
+function filterCat(c){
+ if(c==="All") render(tools);
+ else render(tools.filter(t=>t[1]===c));
+}
+</script>
+</body>
+</html>
