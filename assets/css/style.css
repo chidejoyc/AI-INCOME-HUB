@@ -484,54 +484,57 @@ body[data-theme="dark"] .theme-toggle .sun {
   margin-bottom: 8px;
   font-size: clamp(1.8rem, 4vw, 2.7rem);
   letter-spacing: -0.03em;
-/* Very compact mobile hero */
+/* FINAL COMPACT MOBILE HERO */
 @media (max-width: 720px) {
+
   .hero {
-    padding: 24px 0 20px !important;
+    min-height: auto !important;
+    padding: 16px 0 14px !important;
+  }
+
+  .hero .eyebrow {
+    font-size: 11px !important;
+    margin-bottom: 8px !important;
   }
 
   .hero h1 {
-    margin: 14px auto 10px;
-    font-size: 1.8rem;
-    line-height: 1.08;
+    font-size: 1.45rem !important;
+    line-height: 1.1 !important;
+    margin: 8px 0 !important;
   }
 
   .hero .lede {
-    font-size: 0.88rem;
-    line-height: 1.4;
+    font-size: 0.78rem !important;
+    line-height: 1.3 !important;
+    margin: 6px 0 !important;
   }
 
   .hero-actions {
-    margin-top: 16px;
-    gap: 8px;
+    margin-top: 10px !important;
+    gap: 6px !important;
   }
 
   .hero-actions .btn {
-    min-height: 40px;
-    padding: 8px 12px;
+    min-height: 34px !important;
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
   }
 
   .hero-stats {
     grid-template-columns: repeat(3, 1fr) !important;
-    margin-top: 20px;
+    margin-top: 12px !important;
   }
 
   .hero-stat {
-    padding: 12px 5px !important;
-  }
-
-  .hero-stat + .hero-stat {
-    border-left: 1px solid var(--border) !important;
-    border-top: 0 !important;
+    padding: 7px 3px !important;
   }
 
   .hero-stat b {
-    font-size: 1.1rem;
+    font-size: 0.95rem !important;
   }
 
   .hero-stat span {
-    display: block;
-    font-size: 0.65rem;
-    line-height: 1.2;
+    font-size: 0.58rem !important;
+    line-height: 1.1 !important;
   }
 }
