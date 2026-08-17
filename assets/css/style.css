@@ -538,3 +538,26 @@ body[data-theme="dark"] .theme-toggle .sun {
     line-height: 1.1 !important;
   }
 }
+
+/* Mobile navigation layout */
+.nav-mobile ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 16px;
+    margin: 0;
+    list-style: none;
+}
+
+.nav-mobile li {
+    margin: 0;
+}
+
+.nav-mobile a {
+    display: block;
+    text-decoration: none;
+}
